@@ -50,6 +50,7 @@ html {
   text-decoration: none;
   margin-right: 35px;
   box-shadow: 1px 2px 2px black;
+  background-color: none;
 }
 
 .nav__links {
@@ -74,15 +75,15 @@ html {
   overflow: hidden;
   height: 500px;
 }
-/* 
+
 .nav__overlay {
   position: absolute;
   inset: 0;
   background: rgba(12, 19, 48, 0.8);
-} */
+}
 
 .search__container {
-  position: relative;
+  position: absolute;
 }
 
 .search__title {
@@ -159,7 +160,7 @@ html {
 .footer__title {
   font-size: 36px;
   font-weight: 700;
-  color: #f5c518;
+  color: #9209ee;
   margin-bottom: 16px;
 }
 
@@ -191,11 +192,11 @@ html {
   color: #ccc;
 }
 
-/* .footer__overlay {
+.footer__overlay {
   position: absolute;
   inset: 0;
   background: rgba(12, 19, 48, 0.8);
-} */
+}
 
 .background__img,
 .footer__background {

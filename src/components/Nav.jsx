@@ -24,15 +24,7 @@ const Nav = () => {
             <Link to="/" className="nav__link"> Home </Link>
             <Link to="/movie" className="nav__link"> Find Your Movies </Link>
             </div> 
-            <div className="search__container">
-                <h2 className="search__title"> Search Movies </h2>
-                <div className="search__movies">
-                <input className="search__bar" type="text"
-                id="searchInput"
-                placeholder="Search by Name and the find the best..." />
-                <FontAwesomeIcon icon="magnifying-glass" />
-              
-                </div>   
+            
                   </div>     
           <div className="menu" id="menu">
  
@@ -43,7 +35,7 @@ const Nav = () => {
            </div>
           </div>
         </div> 
-              
+            
     </section>
  
   )

@@ -9,7 +9,7 @@ const Movie = () => {
                 id="searchInput"
                 placeholder="Search by Name and the find the best..." />
                 <FontAwesomeIcon icon="magnifying-glass" />
-              
+              </div>
                 </div>   
   )
 }

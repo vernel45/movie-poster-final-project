@@ -10,12 +10,17 @@ section {
   overflow: hidden;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 /* NAV */
-
 
 /* .background__img {
   position: absolute;
@@ -24,12 +29,7 @@ html {
 } */
 
 .logo {
-  position: absolute;
-  overflow: hidden;
-  width: 200px;
-  height: 80px;
-  left: 32px;
-  top: -6px;
+  position: static;
 }
 
 .logo__img {
@@ -37,25 +37,25 @@ html {
   height: 60px;
 }
 
-.Navbar {
-  position: relative;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 32px;
 }
-
 .nav__link {
-  position: relative;
-  color: rgb(208, 83, 208);
+  color: white;
   text-decoration: none;
-  margin-right: 35px;
-  box-shadow: 1px 2px 2px black;
-  background-color: none;
+  margin: 0;
+  box-shadow: none;
 }
 
 .nav__links {
-  position: relative;
-  right: 30px;
-  top: 12px;
-  justify-self: right;
-  color: white;
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .nav__link:hover {
@@ -68,9 +68,16 @@ html {
 } */
 
 #nav {
+  position: relative;
   width: 100%;
-  overflow: hidden;
-  height: 500px;
+  height: 80px;
+  background-color: #0c1330;
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: none;
 }
 
 .nav__overlay {
@@ -88,7 +95,9 @@ html {
   min-height: 300px;
   gap: 24px;
   padding: 40px 16px;
-z-index: 2;
+  z-index: 2;
+  background-color: #151b35;
+  flex: 1;
 }
 
 .search__title {
@@ -100,7 +109,6 @@ z-index: 2;
 
 .search__movies {
   position: relative;
-  
 }
 
 .search__bar {
@@ -126,15 +134,13 @@ z-index: 2;
 /* FOOTER */
 
 #footer {
-  position: relative;
-  width: 100%;
-  top: -4px;
-  height: 600px;
-  overflow: hidden;
-  background-color: black;
+   width: 100%;
+  background-color: #0c1330;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px 0;
+  margin-top: auto;
 }
 
 /* .footer__background {

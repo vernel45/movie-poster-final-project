@@ -1,16 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import background from "../assets/background.jpg";
+
 
 const Footer = () => {
   return (
     <section id="footer">
       
-      <img src={background} alt="" className="footer__background" />
-
-      <div className="footer__overlay"></div>
-      
-
       <div className="footer__container">
         <h2 className="footer__title">Movie Finder</h2>
 

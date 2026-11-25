@@ -1,7 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
-import background from "../assets/background.jpg"
 import logo from "../assets/logo.png"
 
 const Nav = () => {
@@ -9,8 +8,7 @@ const Nav = () => {
                       
     <section id="nav"> 
    
-     <img src={background} alt="" className="background__img" />
-       <div className="nav__overlay"></div>
+     
    <div className="navbar">
     
 

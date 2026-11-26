@@ -30,4 +30,7 @@ const Nav = () => {
        
             
     </section>
- 
+  )
+}
+
+export default Nav;

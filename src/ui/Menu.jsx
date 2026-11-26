@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function Menu() {
   function openMenu() {
-    document.body.classList.add("open");
+    document.body.classList.add("active");
     console.log("open");
   }
   function closeMenu() {
-    document.body.classList.remove("close");
+    document.body.classList.remove("active");
     console.log("close");
   }
   return (

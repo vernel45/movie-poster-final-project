@@ -4,8 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Movie from "./pages/Movie";
-
-
+import MovieDetails from "../pages/MovieDetails";
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
 <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/movie" element={<Movie />} />
-  <Route path="/" element={<Home />} />
+  <Route path="/movie details" element={<MovieDetails />} />
   
   </Routes>  
   <Footer />  

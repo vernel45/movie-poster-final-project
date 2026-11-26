@@ -175,6 +175,8 @@ html {
 .home__btn:active {
   transform: scale(0.95);
 }
+
+
 .search__container {
   position: relative;
   display: flex;
@@ -219,6 +221,8 @@ html {
   bottom: 12px;
   left: 310px;
 }
+
+
 
 /* FOOTER */
 

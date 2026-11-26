@@ -82,7 +82,7 @@ html {
 }
 
 .menu {
-  display: none;
+  /* display: none; */
 }
 
 .nav__overlay {

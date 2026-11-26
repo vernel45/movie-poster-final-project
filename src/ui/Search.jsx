@@ -1,30 +1,41 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Search = () => {
-  const API_KEY = "2ade860f";
+const Search = ({ fetchMovies }) => {
 
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('')
 
- <div className="search__movie--container">
-                        <h1 className="movie__search">
-                            Search Movies
-                        </h1>
-                        <div className="searchbar--container">
-                            <input
-                                className="search__bar"
-                                type="text"
-                                id="search__Input"
-                            />
-                                <FontAwesomeIcon icon="magnifying-glass" />
-                        </div>
-                    </div>
+  function handleSearch(event) {
+    event.preventDefault()
+    fetchMovies(searchTerm.trim() || 'batman')
+  }
 
+  return (
+    <div className="search__container">
 
- 
-};
+      <h1 className="search__title">Search Movies</h1>
 
-export default Search;
+      <form className="search__form" onSubmit={handleSearch}>
+
+        <input
+          className="search__bar"
+          type="text"
+          placeholder="Search by Name and find the best..."
+          aria-label="Search movies"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
+
+        <button className="search__btn" type="submit" aria-label="Search">
+          <FontAwesomeIcon icon="magnifying-glass" />
+        </button>
+
+      </form>
+
+    </div>
+  )
+}
+
+export default Search

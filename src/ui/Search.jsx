@@ -1,18 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({ onSearch }) => {
-  const [search, setSearch] = useState("");
+const Search = ({ searchMovies }) => {
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const movieName = search.trim();
-
-    if (!movieName) return;
-
-    onSearch(movieName);
-    setSearch("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    searchMovies(searchTerm.trim());
   };
 
   return (
@@ -20,7 +15,7 @@ const Search = ({ onSearch }) => {
       <h1 className="search__title">Search Movies</h1>
 
       <form
-        className="search__movies"
+        className="search__form"
         onSubmit={handleSubmit}
       >
         <input
@@ -28,8 +23,10 @@ const Search = ({ onSearch }) => {
           type="text"
           placeholder="Search movies by title..."
           aria-label="Search movies"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={searchTerm}
+          onChange={(event) =>
+            setSearchTerm(event.target.value)
+          }
         />
 
         <button
@@ -37,7 +34,7 @@ const Search = ({ onSearch }) => {
           type="submit"
           aria-label="Submit search"
         >
-          <FontAwesomeIcon icon="magnifying-glass" />
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </form>
     </div>

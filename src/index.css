@@ -87,7 +87,7 @@ body {
 }
 
 .menu {
-  /* display: none; */
+  display: none;
 }
 
 .nav__overlay {
@@ -173,50 +173,67 @@ body {
   transform: scale(0.95);
 }
 
+/* SEARCH BAR */
+
 .search__container {
-  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 300px;
-  gap: 24px;
-  padding: 40px 16px;
-  z-index: 2;
-  background-color: #151b35;
-  flex: 1;
+  padding: 24px 0;
+  margin-bottom: 32px;
 }
 
 .search__title {
-  position: static;
+  font-size: 36px;
+  font-weight: 700;
   color: white;
-  font-size: 35px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
-.search__movies {
+.search__form {
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
 }
 
 .search__bar {
-  height: 40px;
-  width: 340px;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-left: 10px;
+  width: 100%;
+  height: 56px;
+  padding: 0 65px 0 24px;
+  border: 2px solid #9209ee;
+  border-radius: 30px;
+  background-color: white;
+  color: #0c1330;
+  font-size: 16px;
+  outline: none;
 }
 
-.fa-magnifying-glass {
+.search__bar:focus {
+  box-shadow: 0 0 15px rgba(146, 9, 238, 0.4);
+}
+
+.search__btn {
   position: absolute;
+  right: 6px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #943ff7, #6113fa);
   color: white;
-  bottom: 12px;
-  left: 310px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.search__btn:hover {
+  opacity: 0.8;
 }
 
 /* FOOTER */
@@ -303,123 +320,182 @@ body {
 
 /* SEARCH */
 
-.search__header {
-  text-align: center;
-  padding: 40px 24px 24px;
-}
 
-.search__title {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-
-/* The white pill container with the purple border */
-.search__bar {
-  display: flex;
-  align-items: center;
-  max-width: 650px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  border: 2px solid #9333ea;
-  border-radius: 999px;
-  padding: 6px 6px 6px 24px;
-  box-shadow: 0 0 12px rgba(147, 51, 234, 0.25);
-}
-
-/* Borderless input sitting inside the pill */
-.search__bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: #1f2937;
-}
-
-.search__bar input::placeholder {
-  color: #6b7280;
-}
-
-/* Circular purple button tucked on the right */
-.search__bar button {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background-color: #9300e8;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.search__bar button:hover {
-  background-color: #7e00c7;
-  transform: scale(1.05);
-}
-
-/* MOVIE POSTERS */
+/* MOVIES SECTION */
 
 #movies {
-  justify-content: center;
-}
-
-.movies__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 24px;
+  min-height: 100vh;
+  background-color: #0c1330;
+  padding: 40px 24px 60px;
 }
 
-.movie__card {
+.movies__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* SEARCH BAR */
+
+.search__container {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 48px;
+}
+
+.search__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
   text-align: center;
+}
+
+.search__form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.search__bar {
+  width: 100%;
+  height: 56px;
+  padding: 0 65px 0 24px;
+  border: 2px solid #9209ee;
+  border-radius: 30px;
+  background-color: white;
+  color: #0c1330;
+  font-size: 16px;
+  outline: none;
+}
+
+.search__bar:focus {
+  box-shadow: 0 0 15px rgba(146, 9, 238, 0.4);
+}
+
+.search__btn {
+  position: absolute;
+  right: 6px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9209ee, #d946ef);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 300ms ease;
+}
+
+.search__btn:hover {
+  opacity: 0.8;
+}
+
+/* MOVIE GRID */
+
+.movies__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
   width: 100%;
 }
 
-.movie__card img {
+.movie__link {
+  text-decoration: none;
+  color: white;
+}
+
+.movie__card {
   width: 100%;
-  max-width: 260px;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  border-radius: 10px;
+  height: 100%;
+  background-color: #171f40;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
   transition: transform 300ms ease;
 }
 
-.movie__card img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+.movie__card:hover {
+  transform: translateY(-6px);
 }
 
-.movie__card h3 {
-  font-size: 18px;
-  font-weight: 700;
+.movie__poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie__title {
+  font-size: 20px;
   color: white;
-  margin-top: 12px;
+  margin: 16px 12px 8px;
 }
 
-.movie__card p {
-  font-size: 14px;
-  color: #b8b8b8;
-  margin-top: 6px;
+.movie__year {
+  font-size: 16px;
+  color: #b8b8c7;
 }
 
-.movie__card img:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+.movies__message {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 40px 0;
 }
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+  .movies__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .search__title {
+    font-size: 28px;
+  }
+
+  .movie__title {
+    font-size: 16px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  #movies {
+    padding: 32px 16px;
+  }
+
+  .movies__list {
+    gap: 12px;
+  }
+
+  .search__bar {
+    font-size: 14px;
+    padding-left: 16px;
+  }
+
+  .movie__title {
+    font-size: 14px;
+  }
+
+  .movie__year {
+    font-size: 12px;
+  }
+}
+
 
 
 /* MOBILE PHONES/TABLETS */

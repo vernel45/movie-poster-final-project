@@ -1,8 +1,39 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 
+const Movies = () => {
 
-const Movies = ( { movies }) => {
+  const [movies, setMovies] = useState([])
+
+  const api = 'https://www.omdbapi.com/?apikey=2ade860f'
+
+  const searchTerms = [
+    'Batman',
+    'Superman',
+    'Avengers',
+    'Spider-Man',
+    'Harry Potter',
+    'Transformers'
+  ]
+
+  async function fetchMovies() {
+    const responses = await Promise.all(
+      searchTerms.map((term) =>
+        fetch(`${api}&s=${encodeURIComponent(term)}`)
+          .then((response) => response.json())
+      )
+    )
+
+    const allMovies = responses.flatMap(
+      (response) => response.Search || []
+    )
+
+    setMovies(allMovies)
+  }
+
+  useEffect(() => {
+    fetchMovies()
+  }, [])
+
   return (
     <div className="movies__list">
       {movies.map((movie) => (

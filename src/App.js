@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Movie from "./pages/Movie";
 import MovieDetails from "./pages/MovieDetails";
+import Search from "./ui/Search";
 
 
 function App() {

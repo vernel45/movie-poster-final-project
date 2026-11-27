@@ -4,8 +4,6 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Movie from "./pages/Movie";
-import MovieDetails from "./pages/MovieDetails";
-import Search from "./ui/Search";
 
 
 function App() {
@@ -15,7 +13,7 @@ function App() {
 <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/movie" element={<Movie />} />
-  <Route path="/movie/:id" element={<MovieDetails />} />
+  
 
   
   </Routes>  
